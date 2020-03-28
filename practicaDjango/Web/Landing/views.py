@@ -5,5 +5,6 @@ from django.shortcuts import redirect
 
 #realizo cada clase para html 
 class LandingClass(View):
+    tamplateOK = 'Landing/Landing.html'
     def get(self,request,*args,**kwargs):
-        return render(request,'Landing/landing.html') # retorno la direcion de la carpeta para cada html
+        return render(request,'Landing/Landing.html') # retorno la direcion de la carpeta para cada html
