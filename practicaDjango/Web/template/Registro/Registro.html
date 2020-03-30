@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+</head>
+<body style="text-align: center" class="fondo-blur">
+    <br>
+    <br>
+    <br>
+    <div class="card-body">
+        <h5 class="card-title">REGISTRO</h5>
+      
+      </div>
+      <div class="card-footer">
+        <big class="text-muted">Bienvenido a mi primera pagina</big>
+      </div>
+    <div class="card text-white bg-secondary mb-10" style="max-height: 20rem;"  style="margin-right: auto;" >
+        <form method="POST">
+            {% csrf_token %}
+            {{  registro_form.as_p  }}
+            <a  href="{% url 'Landing:Landing'%}">
+            <button type="submit" class="btn btn-success">REGISTRAR</button>
+          </a>
+    </div>
+        
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>

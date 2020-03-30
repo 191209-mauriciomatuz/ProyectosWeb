@@ -10,20 +10,28 @@
          {% bootstrap_css %}
      </head>
      <body  style="text-align: center">
+      <br>
+      <br>
+      <br>
       <form method="POST" action="">
          {% csrf_token%}
          <div>
             <div class ="mx-auto border border-primary" style="width: 300px;">
               <br>
-              <img class="mb-4 rounded-circle" width="75" height="75" src="https://i1.wp.com/elpalomitron.com/wp-content/uploads/2018/04/tercera-temporada-del-anime-Overlord-destacada-el-palomitron.jpg?fit=1000%2C530&amp;ssl=1"><br>
+              <img class="mb-4 rounded-circle" width="175" height="175" src="https://s3-us-west-2.amazonaws.com/devcodepro/media/blog/que-es-javascript.jpg"><br>
+              <br>
+              <br>
               <br>
               <div  class="form-label-group">
                 <input type="text"  class=" form-control ds-input border border-dark"  name="user" placeholder="Usuario" required><br><br>
                 <input type="password"  class="form-control ds-input border border-dark"  name="password" placeholder="Contraseña" required><br><br>             
-                <button type="submit" class="form-control ds-input border border-primary" >Iniciar</button><br>
+                <button type="submit" class="btn btn-success">INICIAR</button><br>
                 </div>
-              
-               <a  href="{% url 'Landing:Landing'%}">ir al Landing </a> <br>
+               <br>
+               <br>
+               <a  href="{% url 'Landing:Landing'%}">
+                  <button type="button" class="btn btn-primary">ir al Landing</button>   
+               </a> <br>
                {% if error %}
                   <h1> {{error}} </h1> 
                {%endif%}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'Login',
     'Landing',
     'Dashboard',
+    'Registro',
 ]
 
 MIDDLEWARE = [
@@ -79,12 +81,20 @@ WSGI_APPLICATION = 'Web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'usuario',
+        'USER': 'mauricio',
+        'PASSWORD': '1eduardo',
+        'HOST': 'localHost',
+        'PORT': 5432
+       # 'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
+LOGOUT_REDERICT_URL = reverse_lazy('landing')
 LOGIN_URL = '/Login/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
