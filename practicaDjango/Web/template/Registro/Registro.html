@@ -1,32 +1,74 @@
+{%load static tz%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registro</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+
+    <!-- Main1 css -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     {% load bootstrap4 %}
     {% bootstrap_css %}
 </head>
-<body style="text-align: center" class="fondo-blur">
-    <br>
-    <br>
-    <br>
-    <div class="card-body">
-        <h5 class="card-title">REGISTRO</h5>
-      
-      </div>
-      <div class="card-footer">
-        <big class="text-muted">Bienvenido a mi primera pagina</big>
-      </div>
-    <div class="card text-white bg-secondary mb-10" style="max-height: 20rem;"  style="margin-right: auto;" >
-        <form method="POST">
-            {% csrf_token %}
-            {{  registro_form.as_p  }}
-            <a  href="{% url 'Landing:Landing'%}">
-            <button type="submit" class="btn btn-success">REGISTRAR</button>
-          </a>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Create account</h2>
+                        
+                        {% csrf_token %}
+                        {% if form_get.username.value %}
+                        {{ form_get.username }}
+                        {% else %}
+                        {{ form_get.username }}
+                        {% endif %}
+                        <br>
+                        {% if form_get.first_name.value %}
+                        {{ form_get.first_name }}
+                        {% else %}
+                        {{ form_get.first_name }}
+                        {% endif %}
+                        <br>
+                     
+                        <br>
+                        {% if form_get.password.value %}
+                        {{ form_get.password }}
+                        {% else %}
+                        {{ form_get.password }}
+                        {% endif %}
+                        <br>
+                        {% if form_get.email.value %}
+                        {{ form_get.email }}
+                        {% else %}
+                        {{ form_get.email }}
+                        {% endif %}
+                        <br>
+                        <br>  
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        ¿Ya tienes una cuenta? <a  href="{% url 'Login:Login'%}"class="loginhere-link">Inicia Aqui  </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </div>
-        
-    {% bootstrap_javascript jquery='full' %}
-</body>
+
+    <!-- JS -->
+    <script src="{% static 'vendor2/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'js/main1.js'%}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
